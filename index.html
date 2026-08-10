@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allegra Tombolini | Architect & Landscape Designer</title>
+    
+    <!-- SEO & Indicizzazione -->
+    <meta name="description" content="Allegra Tombolini - Architetto e Landscape Designer specializzata in spazi pubblici relazionali, Sponge City e rigenerazione urbana a Zurigo, Savona e Roma.">
+    <meta name="keywords" content="Allegra Tombolini, Landscape Architecture, Sponge City, Architettura del Paesaggio, Zurigo, Savona, Roma">
+
+    <!-- Open Graph / Anteprima WhatsApp, LinkedIn e Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Allegra Tombolini | Architect & Landscape Designer">
+    <meta property="og:description" content="Spazi Pubblici Relazionali: Architettura, Paesaggio, Dinamiche Sociali e Sponge City.">
+    <meta property="og:image" content="images/dordrecht-1.jpg">
+
+    <!-- Favicon fix -->
+    <link rel="shortcut icon" href="#">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- TEMA CHIARO (DEFAULT) --- */
+        :root {
+            --bg-color: #F9F9F7;
+            --text-color: #1A1A1A;
+            --accent-green: #4A5D4E;
+            --accent-terracotta: #C27D60;
+            --muted-gray: #777777;
+            --card-bg: #FFFFFF;
+            --border-color: rgba(0, 0, 0, 0.16); /* Bordo più marcato in tema chiaro */
+            --header-bg: rgba(249, 249, 247, 0.92);
+            --footer-bg: #1A1A1A;
+            --footer-text: #FFFFFF;
+            --modal-bg: rgba(249, 249, 247, 0.98);
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, sans-serif;
+            --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* --- TEMA SCURO (DARK MODE) --- */
+        [data-theme="dark"] {
+            --bg-color: #121614;
+            --text-color: #E6E8E6;
+            --accent-green: #8FA895;
+            --accent-terracotta: #D99B82;
+            --muted-gray: #A0A0A0;
+            --card-bg: #1A201C;
+            --border-color: rgba(255, 255, 255, 0.16); /* Bordo più marcato in dark mode */
+            --header-bg: rgba(18, 22, 20, 0.92);
+            --footer-bg: #0A0D0B;
+            --footer-text: #E6E8E6;
+            --modal-bg: rgba(18, 22, 20, 0.98);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- HEADER & NAV --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.8rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--header-bg);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            color: var(--muted-gray);
+            display: block;
+            letter-spacing: 0.1em;
+            margin-top: -2px;
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .cv-nav-btn {
+            background: none;
+            border: 1px solid var(--accent-terracotta);
+            color: var(--accent-terracotta);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            font-family: var(--font-sans);
+            letter-spacing: 0.05em;
+            font-weight: 500;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .cv-nav-btn:hover {
+            background-color: var(--accent-terracotta);
+            color: #FFFFFF;
+            transform: translateY(-1px);
+        }
+
+        .cv-nav-btn:active {
+            transform: scale(0.96);
+        }
+
+        .lang-switch button {
+            background: none;
+            border: none;
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: var(--muted-gray);
+            cursor: pointer;
+            margin-left: 0.4rem;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .lang-switch button.active,
+        .lang-switch button:hover {
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: var(--font-sans);
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent-green);
+            transform: translateY(-1px);
+        }
+
+        /* --- HERO SECTION (VERSIONE PC) --- */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 6.5rem 2rem 2.5rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-line1 {
+            font-size: clamp(2.2rem, 5vw, 4.2rem);
+            line-height: 1.15;
+        }
+
+        .hero-line2 {
+            font-size: clamp(1.5rem, 3.5vw, 3rem);
+            font-style: italic;
+            margin-top: 0.4rem;
+            line-height: 1.2;
+        }
+
+        .hero-line3 {
+            font-size: clamp(0.9rem, 2vw, 1.6rem);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-top: 0.8rem;
+            color: var(--accent-terracotta);
+            font-family: var(--font-sans);
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--accent-green);
+            max-width: 780px;
+            font-weight: 400;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* --- PHILOSOPHY SECTION --- */
+        .philosophy {
+            padding: 4.5rem 4rem;
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--muted-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .quote-box {
+            border-left: 2px solid var(--accent-terracotta);
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .philosophy-text {
+            font-family: var(--font-serif);
+            font-size: clamp(1.6rem, 2.5vw, 2.3rem);
+            line-height: 1.35;
+            color: var(--text-color);
+            font-style: italic;
+        }
+
+        /* --- PORTFOLIO & CARDS --- */
+        .portfolio {
+            padding: 5rem 4rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        /* BORDO DELLE CARD AUMENTATO A 1.5px E PIÙ NITIDO */
+        .project-card {
+            background: var(--card-bg);
+            border: 1.5px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            transition: transform 0.4s var(--transition-smooth), box-shadow 0.4s var(--transition-smooth), border-color 0.4s var(--transition-smooth);
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 35px rgba(0,0,0,0.08);
+            border-color: var(--accent-terracotta);
+        }
+
+        .project-cover {
+            width: 100%;
+            height: 230px;
+            overflow: hidden;
+            position: relative;
+            background-color: rgba(0,0,0,0.03);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s var(--transition-smooth);
+        }
+
+        .project-card:hover .project-cover img {
+            transform: scale(1.06);
+        }
+
+        .project-header {
+            padding: 1.5rem 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--muted-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .project-info {
+            padding: 1.2rem 2rem 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-info h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+
+        .project-subtitle {
+            font-size: 0.85rem;
+            color: var(--accent-terracotta);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .project-info p {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            opacity: 0.85;
+            margin-bottom: 1.5rem;
+            line-height: 1.55;
+        }
+
+        .project-meta {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--muted-gray);
+        }
+
+        .project-meta span strong {
+            color: var(--accent-green);
+        }
+
+        .click-hint {
+            font-size: 0.75rem;
+            color: var(--accent-terracotta);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.5rem;
+            font-weight: 500;
+            transition: transform 0.3s var(--transition-smooth);
+        }
+
+        .project-card:hover .click-hint {
+            transform: translateX(4px);
+        }
+
+        /* --- FINESTRA MODALE FLUIDA --- */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--modal-bg);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 6rem 2rem 4rem;
+            backdrop-filter: blur(12px);
+            opacity: 0;
+            transition: opacity 0.4s var(--transition-smooth);
+        }
+
+        .modal.is-open {
+            display: block;
+            opacity: 1;
+        }
+
+        .modal-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            transform: translateY(24px);
+            transition: transform 0.4s var(--transition-smooth);
+        }
+
+        .modal.is-open .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-btn {
+            position: fixed;
+            top: 2rem;
+            right: 3rem;
+            font-size: 2.5rem;
+            color: var(--text-color);
+            cursor: pointer;
+            border: none;
+            background: none;
+            z-index: 2100;
+            transition: transform 0.3s var(--transition-smooth);
+        }
+
+        .close-btn:hover {
+            transform: rotate(90deg);
+            color: var(--accent-terracotta);
+        }
+
+        .modal-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-subtitle {
+            font-size: 1rem;
+            color: var(--accent-terracotta);
+            margin-bottom: 2rem;
+        }
+
+        .modal-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            max-width: 850px;
+        }
+
+        /* --- GALLERIA NELLE MODALI --- */
+        .gallery-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .gallery-item {
+            width: 100%;
+            background: var(--card-bg);
+            border: 1.5px solid var(--border-color);
+            padding: 1rem;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 2px;
+            transition: transform 0.5s var(--transition-smooth);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.02);
+        }
+
+        .gallery-caption {
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
+            color: var(--muted-gray);
+            font-style: italic;
+        }
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .bio-sidebar h4, .bio-main h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.4rem;
+        }
+
+        .bio-sidebar p, .bio-sidebar ul {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            list-style: none;
+        }
+
+        .bio-sidebar ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        .cv-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.6rem;
+            background-color: var(--accent-green);
+            color: #FFFFFF !important;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: opacity 0.3s ease, transform 0.3s var(--transition-smooth);
+        }
+
+        .cv-download-btn:hover {
+            opacity: 0.92;
+            transform: translateY(-2px);
+        }
+
+        /* --- STILI ANIMAZIONI ALLO SCROLL --- */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+            will-change: opacity, transform;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- FOOTER & OFFICES --- */
+        footer {
+            padding: 4.5rem 4rem 3rem;
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .footer-brand h2 {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            font-size: 2.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .footer-offices {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .office-item strong {
+            color: var(--accent-terracotta);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: block;
+        }
+
+        .office-item p {
+            color: #CCCCCC !important;
+            font-size: 0.85rem !important;
+        }
+
+        .footer-contact p {
+            color: #AAA;
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-contact a {
+            color: #FFF;
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-terracotta);
+        }
+
+        .copyright {
+            width: 100%;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+            color: #777;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* ==========================================================================
+           OTTIMIZZAZIONE SPECIFICA PER SMARTPHONE (MOBILE ONLY)
+           ========================================================================== */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 1.2rem;
+            }
+
+            .logo {
+                font-size: 1.15rem;
+            }
+
+            .logo span {
+                font-size: 0.65rem;
+            }
+
+            .nav-controls {
+                gap: 0.4rem;
+            }
+
+            .cv-nav-btn {
+                padding: 0.3rem 0.65rem;
+                font-size: 0.75rem;
+            }
+
+            #theme-text {
+                display: none;
+            }
+
+            .theme-toggle {
+                padding: 0.35rem 0.55rem;
+            }
+
+            .lang-switch button {
+                font-size: 0.78rem;
+                margin-left: 0.15rem;
+            }
+
+            /* SPAZIO SUPERIORE AUMENTATO SU MOBILE PER DARE RESPIRO ALLA HERO */
+            .hero {
+                min-height: auto;
+                padding: 9rem 1.2rem 3rem; /* Padding-top aumentato da 7.5rem a 9rem */
+            }
+
+            .hero h1 {
+                margin-bottom: 1rem;
+            }
+
+            .hero-line1 {
+                font-size: 1.85rem;
+                line-height: 1.2;
+            }
+
+            .hero-line2 {
+                font-size: 1.25rem;
+                margin-top: 0.3rem;
+            }
+
+            .hero-line3 {
+                font-size: 0.8rem;
+                margin-top: 0.6rem;
+            }
+
+            .hero p {
+                font-size: 0.92rem;
+                line-height: 1.5;
+            }
+
+            .philosophy, .portfolio, footer {
+                padding: 3.5rem 1.2rem;
+            }
+
+            .philosophy-text {
+                font-size: 1.35rem;
+                line-height: 1.4;
+            }
+
+            .quote-box {
+                padding-left: 1.2rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 1.8rem;
+                margin-top: 1.8rem;
+            }
+
+            .project-cover {
+                height: 180px;
+            }
+
+            .project-header {
+                padding: 1rem 1.2rem 0;
+                font-size: 0.75rem;
+            }
+
+            .project-info {
+                padding: 1rem 1.2rem 1.5rem;
+            }
+
+            .project-info h3 {
+                font-size: 1.45rem;
+            }
+
+            .project-info p {
+                font-size: 0.88rem;
+                margin-bottom: 1rem;
+            }
+
+            .modal {
+                padding: 4.5rem 1.2rem 2.5rem;
+            }
+
+            .close-btn {
+                top: 1rem;
+                right: 1.2rem;
+                font-size: 2rem;
+                background-color: var(--card-bg);
+                border: 1px solid var(--border-color);
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            }
+
+            .bio-grid {
+                grid-template-columns: 1fr;
+                gap: 1.8rem;
+            }
+
+            footer .container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .copyright {
+                margin-top: 2rem;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            Allegra Tombolini
+            <span>Architect & Landscape Designer</span>
+        </div>
+        <div class="nav-controls">
+            <button class="cv-nav-btn" onclick="openModal('modal-cv')" id="nav-cv-btn">About / CV</button>
+            <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" aria-label="Cambia tema chiaro o scuro">
+                <span id="theme-icon">🌙</span> <span id="theme-text">Dark</span>
+            </button>
+            <div class="lang-switch">
+                <button onclick="setLanguage('it')" id="btn-it" class="active" aria-label="Italiano">IT</button>
+                <button onclick="setLanguage('en')" id="btn-en" aria-label="English">EN</button>
+                <button onclick="setLanguage('de')" id="btn-de" aria-label="Deutsch">DE</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero animate-on-scroll">
+        <h1 id="hero-title"></h1>
+        <p id="hero-subtitle"></p>
+    </section>
+
+    <!-- FILOSOFIA / ABOUT -->
+    <section class="philosophy animate-on-scroll">
+        <div class="container">
+            <div class="section-title" id="about-title">Visione & Ricerca Progettuale</div>
+            <div class="quote-box">
+                <div class="philosophy-text" id="about-text"></div>
+                <div class="philosophy-author">— Allegra Tombolini</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO GENERATO DA PROJECTS.JS -->
+    <section class="portfolio">
+        <div class="container">
+            <div class="section-title animate-on-scroll" id="portfolio-title">Progetti Selezionati</div>
+            <div class="grid" id="portfolio-grid"></div>
+        </div>
+    </section>
+
+    <!-- CONTENITORE MODALI PROGETTI -->
+    <div id="modals-container"></div>
+
+    <!-- MODALE BIO / CV -->
+    <div id="modal-cv" class="modal">
+        <button class="close-btn" onclick="closeModal('modal-cv')" aria-label="Chiudi finestra">&times;</button>
+        <div class="modal-content">
+            <h2 class="modal-title">Allegra Tombolini</h2>
+            <div class="modal-subtitle">Architect & Urban / Landscape Designer</div>
+            
+            <div class="bio-grid">
+                <div class="bio-sidebar">
+                    <h4 id="bio-offices-title">Sedi Operative</h4>
+                    <p id="bio-offices-text"></p>
+
+                    <h4 id="bio-focus-title">Focus & Competenze</h4>
+                    <ul id="bio-focus-text"></ul>
+
+                    <h4 id="bio-exp-title">Esperienza Studio</h4>
+                    <p id="bio-exp-text"></p>
+
+                    <a href="CV_Allegra_Tombolini.pdf" download class="cv-download-btn" id="cv-dl-btn">
+                        📄 <span id="cv-dl-text">Scarica CV Completo (PDF)</span>
+                    </a>
+                </div>
+
+                <div class="bio-main">
+                    <h4 id="bio-about-title">Profilo Professionale</h4>
+                    <p class="modal-description" id="bio-about-text" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;"></p>
+                    
+                    <h4 id="bio-philosophy-title">Approccio Progettuale</h4>
+                    <p style="font-size: 1rem; color: var(--muted-gray); font-style: italic; line-height: 1.6;" id="bio-philosophy-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="animate-on-scroll">
+        <div class="container">
+            <div class="footer-brand">
+                <h2>Allegra Tombolini</h2>
+                <p>Architect & Urban / Landscape Designer</p>
+                
+                <div class="footer-offices">
+                    <div class="office-item">
+                        <strong>Zürich</strong>
+                        <p>Weststrasse 145, 8003 Zürich, Svizzera</p>
+                    </div>
+                    <div class="office-item">
+                        <strong>Savona</strong>
+                        <p>Via delle Ferriere 12, 17100 Savona, Italia</p>
+                    </div>
+                    <div class="office-item">
+                        <strong>Roma</strong>
+                        <p>Via Cassia 1041, 00189 Roma, Italia</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-contact">
+                <p id="footer-contact-title" style="color: #AAA; margin-bottom: 0.5rem;">Contatti & Collaborazioni:</p>
+                <p><a href="mailto:allegra.tombolini@gmail.com">allegra.tombolini@gmail.com</a></p>
+                <p style="margin-top: 0.4rem; line-height: 1.6;">
+                    Tel: +41 78 213 5212 (CH) | +39 393 0938283 (IT)<br>
+                    Skype: allegratombolini
+                </p>
+            </div>
+
+            <div class="copyright">
+                <span>Zürich | Savona | Roma</span>
+                <span>© 2026 Allegra Tombolini. All Rights Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INCLUSIONE DEI FILE ESTERNI CON PARAMETRO ANTI-CACHE -->
+    <script src="site_texts.js?v=1.4"></script>
+    <script src="projects.js?v=1.4"></script>
+
+    <!-- SCRIPT GESTIONE LOGICA SITO -->
+    <script>
+        let currentLang = 'it';
+
+        function renderPortfolio() {
+            const grid = document.getElementById('portfolio-grid');
+            const modalsContainer = document.getElementById('modals-container');
+            
+            grid.innerHTML = '';
+            modalsContainer.innerHTML = '';
+
+            if (typeof projectsData !== 'undefined') {
+                projectsData.forEach(p => {
+                    const coverImg = (p.immagini && p.immagini.length > 0) ? p.immagini[0].src : '';
+                    const coverAlt = (p.immagini && p.immagini.length > 0) ? p.immagini[0].alt : p.titolo;
+
+                    // Card Progetto
+                    const card = document.createElement('div');
+                    card.className = 'project-card animate-on-scroll';
+                    card.onclick = () => openModal(`modal-${p.id}`);
+                    card.innerHTML = `
+                        ${coverImg ? `
+                        <div class="project-cover">
+                            <img src="${coverImg}" alt="${coverAlt}" loading="lazy" decoding="async">
+                        </div>` : ''}
+                        <div class="project-header">
+                            <span>${p.anno} | ${p.studio}</span>
+                            <span>${p.luogo}</span>
+                        </div>
+                        <div class="project-info">
+                            <div>
+                                <h3>${p.titolo}</h3>
+                                <div class="project-subtitle">${p.sottotitolo[currentLang]}</div>
+                                <p>${p.descrizione[currentLang]}</p>
+                            </div>
+                            <div class="project-meta">
+                                <span>Status: <strong>${p.status[currentLang]}</strong></span>
+                                <span class="click-hint">${translations[currentLang].clickText}</span>
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+
+                    // Modale Progetto
+                    const modal = document.createElement('div');
+                    modal.id = `modal-${p.id}`;
+                    modal.className = 'modal';
+                    
+                    let galleryHTML = p.immagini.map(img => `
+                        <div class="gallery-item">
+                            <img src="${img.src}" alt="${img.alt}" loading="lazy" decoding="async">
+                            <div class="gallery-caption">${img.didascalia[currentLang]}</div>
+                        </div>
+                    `).join('');
+
+                    modal.innerHTML = `
+                        <button class="close-btn" onclick="closeModal('modal-${p.id}')" aria-label="Chiudi finestra">&times;</button>
+                        <div class="modal-content">
+                            <h2 class="modal-title">${p.titolo}</h2>
+                            <div class="modal-subtitle">${p.luogo} | ${p.studio} (${p.anno})</div>
+                            <p class="modal-description">${p.descrizione[currentLang]}</p>
+                            <div class="gallery-grid">${galleryHTML}</div>
+                        </div>
+                    `;
+                    modalsContainer.appendChild(modal);
+                });
+
+                initScrollObserver();
+            }
+        }
+
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.style.display = "block";
+                setTimeout(() => modal.classList.add('is-open'), 10);
+                document.body.style.overflow = "hidden";
+            }
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.remove('is-open');
+                setTimeout(() => {
+                    modal.style.display = "none";
+                    document.body.style.overflow = "auto";
+                }, 400);
+            }
+        }
+
+        // Chiusura Modali con tasto ESC
+        window.onkeydown = function(event) {
+            if (event.key === "Escape") {
+                document.querySelectorAll('.modal.is-open').forEach(m => closeModal(m.id));
+            }
+        };
+
+        // Chiusura Modali con click sullo sfondo scuro
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal(event.target.id);
+            }
+        };
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            document.getElementById('theme-icon').innerText = newTheme === 'dark' ? '☀️' : '🌙';
+            document.getElementById('theme-text').innerText = newTheme === 'dark' ? 'Light' : 'Dark';
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            if (typeof translations !== 'undefined' && translations[lang]) {
+                document.getElementById('nav-cv-btn').innerText = translations[lang].navCvBtn;
+                document.getElementById('hero-title').innerHTML = translations[lang].heroTitle;
+                document.getElementById('hero-subtitle').innerHTML = translations[lang].heroSubtitle;
+                document.getElementById('about-title').innerText = translations[lang].aboutTitle;
+                document.getElementById('about-text').innerText = translations[lang].aboutText;
+                document.getElementById('portfolio-title').innerText = translations[lang].portfolioTitle;
+                document.getElementById('footer-contact-title').innerText = translations[lang].contactTitle;
+
+                // Campi dinamici Modale About / CV
+                document.getElementById('bio-offices-title').innerText = translations[lang].bioOfficesTitle;
+                document.getElementById('bio-offices-text').innerText = translations[lang].bioOfficesText;
+
+                document.getElementById('bio-focus-title').innerText = translations[lang].bioFocusTitle;
+                document.getElementById('bio-focus-text').innerHTML = translations[lang].bioFocusText;
+
+                document.getElementById('bio-exp-title').innerText = translations[lang].bioExpTitle;
+                document.getElementById('bio-exp-text').innerHTML = translations[lang].bioExpText;
+
+                document.getElementById('bio-about-title').innerText = translations[lang].bioAboutTitle;
+                document.getElementById('bio-about-text').innerText = translations[lang].bioAboutText;
+                document.getElementById('bio-philosophy-title').innerText = translations[lang].bioPhilosophyTitle;
+                document.getElementById('bio-philosophy-text').innerText = translations[lang].bioPhilosophyText;
+                document.getElementById('cv-dl-text').innerText = translations[lang].cvDlText;
+            }
+
+            document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${lang}`).classList.add('active');
+
+            renderPortfolio();
+        }
+
+        // Observer per animazioni allo scroll
+        function initScrollObserver() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animate-on-scroll:not(.is-visible)').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Inizializzazione automatica all'apertura
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(currentLang);
+        });
+    </script>
+</body>
+</html>
